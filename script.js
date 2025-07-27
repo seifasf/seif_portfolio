@@ -1,16 +1,60 @@
-// Navigation
+// Enhanced Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const body = document.body;
 
+// Mobile menu toggle
 hamburger.addEventListener('click', () => {
+    console.log('Hamburger clicked');
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    // Toggle body scroll
+    if (navMenu.classList.contains('active')) {
+        body.classList.add('menu-open');
+        console.log('Menu opened');
+    } else {
+        body.classList.remove('menu-open');
+        console.log('Menu closed');
+    }
 });
 
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+// Close menu when clicking on nav links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        console.log('Nav link clicked');
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        if (navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+            console.log('Menu closed by outside click');
+        }
+    }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        console.log('Menu closed by escape key');
+    }
+});
+
+// Prevent menu from closing when clicking inside menu
+navMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
