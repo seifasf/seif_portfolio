@@ -2663,3 +2663,82 @@ html {
         flex-shrink: 0;
     }
 }
+
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-text-section {
+        text-align: center;
+        align-items: center;
+    }
+    .hero-name,
+    .hero-title,
+    .hero-description p {
+        text-align: center;
+        align-self: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Projects Section */
+    .projects .section-header,
+    .projects .section-title,
+    .projects .section-subtitle {
+        text-align: center;
+        align-items: center;
+    }
+    .project-content {
+        align-items: center;
+        text-align: center;
+    }
+    .project-title,
+    .project-description {
+        text-align: center;
+        align-self: center;
+    }
+    .project-links {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Work Section */
+    .work .section-header,
+    .work .section-title,
+    .work .section-subtitle {
+        text-align: center;
+        align-items: center;
+    }
+    .work-card {
+        align-items: center;
+        text-align: center;
+    }
+    .work-title,
+    .work-role,
+    .work-description {
+        text-align: center;
+        align-self: center;
+    }
+    .work-tech {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+/* Ensure project logos are black & white on all screens */
+.project-logo {
+    filter: brightness(0) invert(1) grayscale(1) !important;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.project-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
