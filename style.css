@@ -97,18 +97,27 @@ img {
     align-items: center;
 }
 
-.nav-logo-img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 107, 107, 0.3);
+.nav-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.nav-logo-img:hover {
-    border-color: rgba(255, 107, 107, 0.6);
-    transform: scale(1.1);
+.nav-logo-text:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 107, 107, 0.5);
 }
 
 .nav-menu {
@@ -1968,9 +1977,9 @@ html {
         opacity: 0.6;
     }
     
-    .nav-logo-img {
-        width: 40px;
-        height: 40px;
+    .nav-logo-text {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem;
     }
     
     /* Mobile Gradient Orbs - Reduced and Repositioned */
@@ -2634,17 +2643,7 @@ html {
         transform: scale(1.05);
     }
     
-    /* Debug styles to ensure images are visible */
-    .work-logo::before {
-        content: 'Logo';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #666;
-        font-size: 12px;
-        z-index: -1;
-    }
+
     
     .work-title {
         font-size: 1.3rem;
