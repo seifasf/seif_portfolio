@@ -910,19 +910,20 @@ section {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
 }
 
 .work-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 0.5rem;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
     pointer-events: none;
+    border-radius: 10px;
 }
 
 .work-content h3 {
@@ -2597,8 +2598,8 @@ html {
         height: 60px;
         width: auto;
         margin: 0 auto 1.5rem;
-        filter: brightness(0) invert(1);
-        opacity: 0.9;
+        filter: none;
+        opacity: 1;
         transition: all 0.3s ease;
         -webkit-user-drag: none;
         -khtml-user-drag: none;
@@ -2618,6 +2619,7 @@ html {
         height: 100%;
         object-fit: contain;
         display: block;
+        border-radius: 8px;
     }
     
     .work-card:hover .work-logo {
